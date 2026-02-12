@@ -31,14 +31,6 @@ pipeline {
     stage('Build') {
         steps {
             container('my-builder') {
-                sh 'npm ci'
-                sh 'npx next build'
-            }
-        }
-    }
-    stage('Build') {
-        steps {
-            container('my-builder') {
                 sh 'cd my-app && npm ci'
                 sh 'cd my-app && npx next build'
             }

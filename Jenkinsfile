@@ -29,11 +29,13 @@ pipeline {
       }
     }
     stage('Build') {
-    container('my-builder') {
-        sh 'npm ci'
-        sh 'npm run Build'
+        steps {
+            container('my-builder') {
+                sh 'npm ci'
+                sh 'npm run Build'
+            }
+        }
     }
-}
     stage('Test Build') {
       steps {
         container('my-builder') {

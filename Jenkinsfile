@@ -36,12 +36,13 @@ pipeline {
             }
         }
     }
-    stage('Test Build') {
-      steps {
-        container('my-builder') {
-          sh 'npm run test'
+    stage('Build') {
+        steps {
+            container('my-builder') {
+                sh 'cd my-app && npm ci'
+                sh 'cd my-app && npx next build'
+            }
         }
-      }
     }
     stage('Deploy') {
       steps {

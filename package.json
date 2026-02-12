@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
-    "Build": "next build",
+    "build": "next build",
     "lint": "next lint",
     "test": "echo \"No test specified\" && exit 0"
   },
